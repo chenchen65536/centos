@@ -3,7 +3,12 @@ RUN echo 'root:wangjile' | chpasswd
 #RUN yum list
 #RUN yum -y update
 RUN apt update
-RUN apt-get install -y wget unzip curl jq
+RUN apt-get install -y wget unzip curl jq ssh
+RUN echo "PasswordAuthentication yes" > /etc/ssh/sshd_config
+RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
+RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+RUN service ssh restart
+
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 RUN unzip ngrok-stable-linux-amd64.zip
 RUN chmod +x ngrok
