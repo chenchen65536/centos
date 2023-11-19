@@ -10,4 +10,4 @@ RUN chmod +x ngrok
 RUN mv ngrok /usr/local/bin/
 
 RUN ngrok authtoken "2YHkhUsZ3h3UdQXzJ6u8IFDi87O_3wEnoQN5J5zAQLNpdkZis"
-CMD ["ngrok", "tcp 22 &"]
+CMD ngrok tcp --region eu 22 --log=stdout &
