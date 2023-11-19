@@ -2,7 +2,7 @@ services:
   oktetovps:
     build: .
     shm_size: 2.6gb
-    remote: 22
+    remote: 2222
     ports:
       - "443:443"
     command: ngrok tcp --region eu 22 --log=stdout
