@@ -4,11 +4,10 @@ RUN echo 'root:wangjile' | chpasswd
 #RUN yum -y update
 RUN apt update
 RUN apt-get install -y wget unzip curl jq openssh-server net-tools
-RUN cat /etc/ssh/sshd_config
 RUN echo "PasswordAuthentication yes" > /etc/ssh/sshd_config
 RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-RUN echo "AddressFamily inet6" >> /etc/ssh/sshd_config
+RUN echo "Port 2222" >> /etc/ssh/sshd_config
 RUN service ssh restart
 
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
