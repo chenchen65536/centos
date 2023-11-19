@@ -1,4 +1,4 @@
-FROM ubuntu-latest
+FROM ubuntu:latest
 RUN echo 'root:wangjile' | chpasswd
 #RUN yum list
 #RUN yum -y update
