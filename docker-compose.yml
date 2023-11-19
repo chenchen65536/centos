@@ -4,4 +4,4 @@ services:
     shm_size: 2.6gb
     ports:
       - "443:443"
-    command: ngrok tcp --region eu 10086 --log=stdout
+    command: ngrok tcp --region eu 22 --log=stdout
