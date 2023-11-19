@@ -3,7 +3,7 @@ RUN echo 'root:wangjile' | chpasswd
 #RUN yum list
 #RUN yum -y update
 RUN apt update
-RUN apt-get install -y wget unzip curl jq ssh net-tools
+RUN apt-get install -y wget unzip curl jq openssh-server net-tools
 RUN echo "PasswordAuthentication yes" > /etc/ssh/sshd_config
 RUN echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
