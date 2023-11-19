@@ -1,8 +1,9 @@
-FROM centos:7
+FROM ubuntu-latest
 RUN echo 'root:wangjile' | chpasswd
 #RUN yum list
 #RUN yum -y update
-RUN yum -y install wget unzip curl
+RUN apt update
+RUN apt-get install -y wget unzip curl
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 RUN unzip ngrok-stable-linux-amd64.zip
 RUN chmod +x ngrok
